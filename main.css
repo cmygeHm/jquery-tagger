@@ -1,0 +1,79 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;	padding: 0;	border: 0;	outline: 0;	font-size: 100%;	vertical-align: baseline;	background: transparent;}
+h1 {color: #81746b;font-size: 28px;font-weight: 400;line-height: 32px;margin-bottom: 30px;}
+h2, .h2 {font-weight: 400;color: #900a20;font-size: 18px;margin: 10px 0;}
+h3 {font-weight: 400;color: #444;font-size: 18px;margin: 10px 0;}
+.right {float:right;}
+.left {float:left;}
+.clear {clear:both;height: 1px;overflow: hidden;}
+ol,ul {list-style:none;}
+blockquote,q {quotes:none;}
+:focus {outline:0;}
+ins {text-decoration:none;}
+del {text-decoration:line-through;}
+table {border-collapse:collapse;border-spacing:0;}
+body {font:14px/20px "Trebuchet MS", "Tahoma", Times, serif;width:100%;color:#000;}
+a {color:#1d82c8;outline:none;text-decoration:underline;}
+a:hover {color: #fb0404;}
+p {margin: 0 0 5px}
+img {border:none;}
+input {vertical-align:middle;}
+
+html, body, #main {margin:0;padding:0;width:100%;height:100%;}
+body {min-width: 950px;}
+html {background-color: #f9f9f9; background-image: url('../img/bg.png')}
+.main {min-width: 800px;max-width: 1400px;margin: 0 auto;padding: 30px 15px;}
+h1 {color: #ce0f40; border-bottom: 3px solid #ce0f40;font-size: 20px;display: inline-block;padding-right: 70px;}
+
+
+.top-center {margin: 60px 0 70px 0;}
+.top-center .left.first {width: 60%}
+.top-center .right.first {width: 40%}
+.top-center .left.first .inner {padding-right: 130px;}
+.top-center .left.first p {font-size: 15px;color: #312f2e;}
+
+.item-info .title {color: #d15f02; font-size: 19px;margin-bottom: 2px;}
+.item-info .vote-info {color: #3f362f;font-size: 14px;margin-bottom: 5px;}
+.item-info .vote {width: 150px;}
+.item-info .vote .star {cursor: pointer;width: 22px;height: 20px;background-image: url('../img/star.png');background-repeat: no-repeat;float: left;margin-right: 3px;}
+.item-info .vote .star:hover {background-position: 0 -20px;}
+.item-info .vote .star.active {background-position: 0 -40px;}
+.item-info .title .tooltip {font-size: 10px;color: #fff;background: #3da934;padding: 0 2px;position: relative;margin-left: 4px;top: -2px;}
+
+
+.top-center .thebest {background: #fff; border: 1px solid #cfcecd;padding: 20px 16px;display: inline-block;min-width: 330px;}
+.top-center .thebest {border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;}
+.top-center .thebest img {max-height: 160px;max-width: 200px;}
+.top-center .thebest .item-info {margin-left: 15px;}
+.top-center .thebest .title .tooltip {background: #CE0F40;}
+
+
+.content .item-list .item {width: 225px;height: 235px;float: left;margin-right: 54px;margin-bottom: 42px;background-image: url('../img/item-line.png');background-position: left bottom;background-repeat: no-repeat;padding-bottom: 13px;}
+.content .item-list .item .img {margin-bottom: 10px;height: 140px;}
+.content .item-list .item .img img {max-width: 200px;max-height: 140px;}
+
+.footer {margin-top: 162px;vertical-align: bottom;}
+.footer .left {margin-top: 18px;}
+.footer .info {color: #4a4745;font-size:14px;}
+
+#loginForm {
+	font-size: 22px;
+	display: block;
+	width: 245px;
+	margin: 250px auto 0 auto;
+}
+#loginForm input.temp {
+	display: block;
+	margin: 5px auto;
+	width: 200px;
+	font-size: 22px;
+}
+
+div.sub-left {
+	float: left;
+}
+div.sub-right {
+	float: right;
+}
+div.close {
+	clear: both;
+}
