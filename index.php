@@ -32,6 +32,5 @@ $(document).ready(function(){
 			<li>СПб</li>
 		</lu>
 	</form>
-<!--	<div style="border: 1px solid red; width: 5px; height: 150px; position: absolute; left: 790px; top: 378px">test</div>-->
 </body>
 </html>

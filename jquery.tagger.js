@@ -37,8 +37,10 @@ gafarov-am@ya.ru
 					variantList.show();
 				})
 				.keyup(function(ev){
-					var collection = variantList.findOccurenceInOriginalList($(this).val().toLowerCase());
-					variantList.redrawListItems(collection);
+					if (ev.which != 40 && ev.which != 38) {
+						var collection = variantList.findOccurenceInOriginalList($(this).val().toLowerCase());
+						variantList.redrawListItems(collection);
+					}
 				})
 				.keydown(function(ev){
 					if (ev.which == 188) // код запятой
@@ -66,6 +68,12 @@ gafarov-am@ya.ru
 							backspaceCount = 0;
 						}
 					}
+					else if (ev.which == 40) { // стрелка вниз
+						variantList.hoverNextItemInList();
+					}
+					else if (ev.which == 38) { // стрелка вверх
+						variantList.hoverPrevItemInList();
+					}
 					if (!variantList.isShowed())
 						variantList.show();
 				})
@@ -84,7 +92,7 @@ gafarov-am@ya.ru
 			$(this).replaceWith($editableArea);
 
 			var variantList = {
-				list: $('<div></div>').css({
+				list: $('<div id="testID"></div>').css({
 					position: 'absolute',
 					display: 'none',
 					width: ($editableArea.outerWidth() - options.variantList.shiftToRight*2 - parseInt(options.variantList.borderWidth, 10)*2) + 'px',
@@ -115,7 +123,15 @@ gafarov-am@ya.ru
 							self.insert($(this).html(), $(this).attr('variant_list_item_identificator'));
 							$(this).css('display', 'none');
 							delete originalList[key];
-						});
+						})
+						.hover(
+							function() {
+								$(this).addClass('taggerListItemHovered');
+							},
+							function() {
+								self.unhoverItemInList();
+							}
+						);
 				},
 				create: function(items) {
 
@@ -181,9 +197,13 @@ gafarov-am@ya.ru
 					else {
 						width = '95%';
 					}
-					
 					return width;
 				},
+				/**
+				 * Находит все элементы списка originalList, совпадающие с needle и возвращает этот список.
+				 * @param needle
+				 * @return object{key, itemText}
+				 */
 				findOccurenceInOriginalList: function(needle) {
 					var result = {};
 					for(var i in originalList) {
@@ -196,6 +216,28 @@ gafarov-am@ya.ru
 					var key = parseInt($teg.attr('variant_list_item_identificator'), 10);
 					variantList.list.children('div [variant_list_item_identificator='+(key)+']').css('display', 'block');
 					$teg.remove();
+				},
+				hoverNextItemInList: function() {
+					if (variantList.list.children(':visible.taggerListItemHovered').length) {
+						console.log('fuck')
+						$nextItem = variantList.list.children(':visible.taggerListItemHovered').nextAll(':visible:first')
+					} else {
+						$nextItem = variantList.list.children(':visible:first');
+					}
+					this.unhoverItemInList();
+					$nextItem.addClass('taggerListItemHovered');
+				},
+				hoverPrevItemInList: function() {
+					if (variantList.list.children(':visible.taggerListItemHovered').length) {
+						$prevItem = variantList.list.children(':visible.taggerListItemHovered').prevAll(':visible:first')
+					} else {
+						return false;
+					}
+					this.unhoverItemInList();
+					$prevItem.addClass('taggerListItemHovered');
+				},
+				unhoverItemInList: function() {
+					variantList.list.children('.taggerListItemHovered').removeClass('taggerListItemHovered');
 				}
 			};
 
@@ -207,7 +249,7 @@ gafarov-am@ya.ru
 				if($newInput[0] != ev.target && variantList.isShowed())
 					variantList.hide();
 			});
-			
+
 			$(window).resize(function() {
 				variantList.redrawListPosition();
 			});

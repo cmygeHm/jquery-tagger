@@ -3,14 +3,14 @@ gafarov-am@ya.ru
 */
 
 .taggerDiv {
-	
+
 }
 
 .taggerListItem {
 	border: 1px solid green;
 }
 
-.taggerListItem:hover {
+.taggerListItemHovered {
 	background-color: #1d82c8;
 }
 
