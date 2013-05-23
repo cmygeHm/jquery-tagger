@@ -1,0 +1,56 @@
+/*
+gafarov-am@ya.ru
+*/
+
+.taggerDiv {
+
+}
+
+.taggerListItem {
+	border: 1px solid green;
+}
+
+.taggerListItemHovered {
+	background-color: #1d82c8;
+}
+
+.taggerCommonHeight {
+	height: 25px;
+}
+
+.taggerSelectedItem {
+	border: 1px solid #1d82c8;
+	font-size: 14px;
+	padding: 0 3px;
+	float: left;
+	margin: 1px;
+	line-height: 24px;
+}
+
+.taggerSelectedItemDark {
+	background-color: #09f;
+}
+
+.taggerSelectedItemX {
+	width: 9px;
+	height: 10px;
+	margin-left: 4px;
+	background: no-repeat url("/img/blob_x.gif");
+	display: inline-block;
+}
+.taggerSelectedItemX:hover {
+	background-color: #1d82c8;
+}
+
+.taggerClearBoth {
+	clear: both;
+}
+
+.taggerInput {
+	border: 1px solid green;
+	border: 0px;
+	display: block;
+	float: left;
+	padding-left: 4px;
+	height: 23px;
+}
